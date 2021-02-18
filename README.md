@@ -1,4 +1,6 @@
 # API - Fabbrini
+<img src='https://github.com/douglasshibata/fabbrini/blob/main/src/assets/logo.png' logo='Logo do Fabbrini' />
+
 Utilizado para o gerenciamento da aplicação do Fabbrini utilizado para a telemedicina
 
 Desenvolvido utilizando ExpressJS e MongoDB.
