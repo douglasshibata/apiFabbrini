@@ -3,7 +3,6 @@ const { cpf } = require('cpf-cnpj-validator');
 // Validador de Senha
 var passwordValidator = require('password-validator');
 var schema = new passwordValidator();
-const authMiddleware = require('../middlewares/auth');
 
 module.exports = {
     async store(req, res) {

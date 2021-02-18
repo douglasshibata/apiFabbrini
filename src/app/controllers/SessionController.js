@@ -1,7 +1,6 @@
 const User = require('../models/Usuario');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const authConfig = require('../../config/auth.json');
 
 module.exports = {
     async store(req, res) {
@@ -15,7 +14,7 @@ module.exports = {
                 return res.status(400).send({error:{message:"Senha inválida"}})
             }
             user.senha = undefined;
-            const token = jwt.sign({_id:user.id},authConfig.secret,{
+            const token = jwt.sign({_id:user.id},process.env.secret,{
                 expiresIn:86400,
             });
             return res.send({ user,token })
