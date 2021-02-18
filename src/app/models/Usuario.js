@@ -99,6 +99,14 @@ const UsuarioSchema = new mongoose.Schema({
         contato: { type: String },
         grauParentesco: { type: String },
     }],
+    tokenResetSenha:{
+        type:String,
+        select:false,
+    },
+    tokenResetExpiresSenha: {
+        type: Date,
+        select:false,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
