@@ -25,6 +25,11 @@ Adicione a url do MongoDB Atlas na variável MONGO_URL
 MONGO_URL = mongodb+srv://<username>:<password>@host/<dbname>?options
 ```
 
+Adicionar o hash secret para que seja providenciado um token válido
+
+```bash
+secret = hash md5
+```
 
 Baixar as dependencias
 ```bash
