@@ -1,7 +1,7 @@
 # API - Fabbrini
 <img src='https://github.com/douglasshibata/fabbrini/blob/main/src/assets/logo.png' logo='Logo do Fabbrini' />
 
-Utilizado para o gerenciamento da aplicação do Fabbrini utilizado para a telemedicina
+Utilizado para o gerenciamento da aplicação do Fabbrini.
 
 Desenvolvido utilizando ExpressJS e MongoDB.
 
@@ -31,6 +31,16 @@ Adicionar o hash secret para que seja providenciado um token válido
 
 ```bash
 secret = hash md5
+```
+
+Adicionar as credenciais de provedor de email para realizar o envio de email. 
+Utilizando a biblioteca do nodemailer e nodemailer-express-handlebars para realizar o envio de email e utilizar um template html para recuperação de senha
+
+```bash
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USER=
+MAIL_PASS=
 ```
 
 Baixar as dependencias
