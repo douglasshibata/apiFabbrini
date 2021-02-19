@@ -12,7 +12,7 @@ module.exports = {
             const token = crypto.randomBytes(20).toString('hex');
             const horaAtual = new Date();
             horaAtual.setHours(horaAtual.getHours() + 1);
-
+            const app_url = process.env.FRONT_URL;
             await User.findByIdAndUpdate(user.id, {
                 '$set': {
                     tokenResetSenha: token,
@@ -21,9 +21,10 @@ module.exports = {
             });
             mailer.sendMail({
                 to: email,
-                from: 'douglas.shibata@estudante.ifb.edu.br',
+                from: process.env.MAIL_USER,
                 template: "forgot_password",
-                context: { token }
+                subject:"Recuperação de senha",
+                context: { token,app_url }
             }, (err) => {
                 if (err) {
                     console.log(err);

@@ -43,6 +43,11 @@ MAIL_USER=
 MAIL_PASS=
 ```
 
+Adicionar a url do frontend para que seja enviado o email com o endereço correto.
+```bash
+FRONT_URL=
+```
+
 Baixar as dependencias
 ```bash
 npm install 
