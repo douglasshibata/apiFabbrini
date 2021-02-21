@@ -1,9 +1,10 @@
 # API - Fabbrini
-<img src='https://github.com/douglasshibata/fabbrini/blob/main/src/assets/logo.png' logo='Logo do Fabbrini' />
 
 Utilizado para o gerenciamento da aplicação do Fabbrini.
 
 Desenvolvido utilizando ExpressJS e MongoDB.
+
+<img src='https://github.com/douglasshibata/fabbrini/blob/main/src/assets/logo.png' logo='Logo do Fabbrini' />
 
 Para rodar a aplicação 
 
