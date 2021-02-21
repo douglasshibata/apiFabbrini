@@ -1,5 +1,4 @@
 # API - Fabbrini
-
 Utilizado para o gerenciamento da aplicação do Fabbrini.
 
 Desenvolvido utilizando ExpressJS e MongoDB.
