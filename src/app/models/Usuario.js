@@ -99,13 +99,25 @@ const UsuarioSchema = new mongoose.Schema({
         contato: { type: String },
         grauParentesco: { type: String },
     }],
-    tokenResetSenha:{
-        type:String,
-        select:false,
+    conselho: {
+        type: String
+    },
+    ufConselho: {
+        type: String
+    },
+    registro: {
+        type: String
+    },
+    especialidade: {
+        type: String
+    },
+    tokenResetSenha: {
+        type: String,
+        select: false,
     },
     tokenResetExpiresSenha: {
         type: Date,
-        select:false,
+        select: false,
     },
     createdAt: {
         type: Date,
