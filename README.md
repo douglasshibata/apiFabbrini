@@ -62,3 +62,9 @@ ou
 ```bash
 npm run dev
 ```
+
+Deploy no Heroku
+criar arquivo Procfile e adicionar 
+```bash
+web:npm start 
+```
