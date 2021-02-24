@@ -4,7 +4,7 @@ const AgendaSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    cpfNumberPatient: {
+    cpfNumberPaciente: {
         type: String,
         require: true,
     },
@@ -12,10 +12,18 @@ const AgendaSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    user:{
+    usuarioProfissional:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Usuario",
+    },
+    usuarioPaciente:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Usuario",
+    },
+    horario:{
+        type:Date,
     }
 });
 const Agenda = mongoose.model('agenda', AgendaSchema);
 module.exports = Agenda;
+//https://www.youtube.com/watch?v=GAZdUyIV3ms

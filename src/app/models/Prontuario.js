@@ -4,7 +4,7 @@ const ProntuarioSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    cpfNumberPatient: {
+    cpfNumberPaciente: {
         type: String,
         require: true,
     },
