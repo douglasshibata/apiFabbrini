@@ -19,7 +19,8 @@ module.exports = {
             });
             return res.send({ user,token })
         } catch (error) {
-            return res.status(400).send(error)
+            return res.status(400).send({ message: { error: 'Algo deu Errado, entre em contato com o departamento de TI' } })
+
         }
     },
 }

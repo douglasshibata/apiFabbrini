@@ -51,7 +51,7 @@ module.exports = {
             user.senha = undefined;
             return res.send({ user })
         } catch (error) {
-            return res.status(400).send(error)
+            return res.status(400).send({ message: { error: 'Algo deu Errado, entre em contato com o departamento de TI' } })
         }
     },
     async update(req, res) {
@@ -69,7 +69,7 @@ module.exports = {
                     .status(400)
                     .send({ message: { error: 'CPF não Cadastrado' } })
             }
-          
+
             if (/\d/.test(firstName)) {
                 return res
                     .status(400)
@@ -89,11 +89,11 @@ module.exports = {
                     .status(400)
                     .send({ message: { error: 'Senha Fraca, deve ter no mínimo 8 caracteres tem que ter no mínimo 1 letra Maiuscula Dois Digitos Sem espaço' } })
             }
-            const user = await User.findOneAndUpdate({_id},req.body);
-            return res.status(201).send({user})
+            const user = await User.findOneAndUpdate({ _id }, req.body);
+            return res.status(201).send({ user })
         } catch (error) {
             console.log(error);
-            return res.status(400).send(error)
+            return res.status(400).send({ message: { error: 'Algo deu Errado, entre em contato com o departamento de TI' } })
         }
     },
     async show(req, res) {
@@ -105,16 +105,18 @@ module.exports = {
             }
             return res.send({ user })
         } catch (error) {
-            return res.status(400).send(error)
+            return res.status(400).send({ message: { error: 'Algo deu Errado, entre em contato com o departamento de TI' } })
+
         }
     },
     async index(req, res) {
         try {
             const user = await User.find();
-            
+
             return res.send({ user })
         } catch (error) {
-            return res.status(400).send(error)
+            return res.status(400).send({ message: { error: 'Algo deu Errado, entre em contato com o departamento de TI' } })
+
         }
     },
 }    

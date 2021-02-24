@@ -23,7 +23,7 @@ module.exports = {
                 to: email,
                 from: process.env.MAIL_USER,
                 template: "forgot_password",
-                subject:"Recuperação de senha",
+                subject:"Fabbrini - Recuperação de senha",
                 context: { token,app_url }
             }, (err) => {
                 if (err) {
