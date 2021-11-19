@@ -68,3 +68,17 @@ criar arquivo Procfile e adicionar
 ```bash
 web:npm start 
 ```
+### Using mongo in localhost
+#### Run with docker 
+```bash
+ docker run --name some-mongo -d mongo:latest
+```
+
+#### Create a db in mongo
+```bash
+use fabbrini
+```
+#### Create user in mongodb 
+```bash
+db.createUser({ user:"fabbrini", pwd:passwordPrompt(),roles:[{role:"readWrite",db:"fabbrini"}]}) 
+```
