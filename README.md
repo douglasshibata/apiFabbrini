@@ -68,43 +68,42 @@ criar arquivo Procfile e adicionar
 ```bash
 web:npm start 
 ```
-### Using mongo in localhost
-#### Run with docker 
+### Usando mongodb no localhost
+#### Rodando com docker 
 ```bash
  docker run --name some-mongo -d mongo:latest
 ```
 
-#### Create a db in mongo
+#### Criando banco de dados no mongodb
 ```bash
 use fabbrini
 ```
-#### Create user in mongodb 
+#### Criando Usuário no mongodb 
 ```bash
 db.createUser({ user:"fabbrini", pwd:passwordPrompt(),roles:[{role:"readWrite",db:"fabbrini"}]}) 
 ```
 
-##### Configurações cron 
-### Allowed fields
-
+### Configurações cron 
+#### Campos permitidos
 ```
- # ┌────────────── second (optional)
- # │ ┌──────────── minute
- # │ │ ┌────────── hour
- # │ │ │ ┌──────── day of month
- # │ │ │ │ ┌────── month
- # │ │ │ │ │ ┌──── day of week
+ # ┌────────────── segundos (opicional)
+ # │ ┌──────────── minutos
+ # │ │ ┌────────── hora
+ # │ │ │ ┌──────── dia do mês
+ # │ │ │ │ ┌────── mês
+ # │ │ │ │ │ ┌──── dia da semana
  # │ │ │ │ │ │
  # │ │ │ │ │ │
  # * * * * * *
 ```
 
-### Allowed values
+### Valores permitidos
 
-|     field    |        value        |
+|     campo    |        valor        |
 |--------------|---------------------|
-|    second    |         0-59        |
-|    minute    |         0-59        |
-|     hour     |         0-23        |
-| day of month |         1-31        |
-|     month    |     1-12 (or names) |
-|  day of week |     0-7 (or names, 0 or 7 are sunday)  |
+|   segundos   |         0-59        |
+|    minutos   |         0-59        |
+|     hora     |         0-23        |
+|  dia do mês  |         1-31        |
+|     mês      |     1-12            |
+| dia da semana|   0-7               |
