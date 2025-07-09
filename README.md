@@ -1,64 +1,70 @@
+
 # Fabbrini
 
-This app was created with Bootify.io - tips on working with the code [can be found here](https://bootify.io/next-steps/).
+Projeto de telemedicina para realizar teleconsultas para ajudar na área da saúde
 
-## Development
+![Logo](https://github.com/douglasshibata/apiFabbrini/blob/refactor_api/src/main/webapp/public/images/logo.png?raw=true)
 
-When starting the application `docker compose up` is called and the app will connect to the contained services.
-[Docker](https://www.docker.com/get-started/) must be available on the current system.
 
-During development it is recommended to use the profile `local`. In IntelliJ `-Dspring.profiles.active=local` can be
-added in the VM options of the Run Configuration after enabling this property in "Modify options". Create your own
-`application-local.properties` file to override settings for development.
+## Stack utilizada
 
-Lombok must be supported by your IDE. For IntelliJ install the Lombok plugin and enable annotation processing -
-[learn more](https://bootify.io/next-steps/spring-boot-with-lombok.html).
+**Front-end:** React, Bootstrap
 
-In addition to the Spring Boot application, the DevServer must also be started - for this
-[Node.js](https://nodejs.org/) version 22 is required. On first usage and after updates the dependencies have to be installed:
+**Back-end:** Java, Spring boot
+
+## Instalação
+
+Ao iniciar a aplicação, execute  
+```
+docker compose up
+```  
+e o app se conectará aos serviços contidos.
+
+Durante o desenvolvimento, recomenda-se usar o perfil `local`. No IntelliJ, após habilitar essa propriedade em **Modify options**, adicione `-Dspring.profiles.active=local` nas opções de VM da Configuração de Execução. Crie seu próprio arquivo `application-local.properties` para sobrescrever as configurações de desenvolvimento.
+
+Além da aplicação Spring Boot, é necessário iniciar também o DevServer. Para isso, é preciso ter o [Node.js](https://nodejs.org/) versão 22. Na primeira vez e após atualizações, instale as dependências:
 
 ```
 npm install
 ```
 
-The DevServer can be started as follows:
+Em seguida, inicie o DevServer com:
 
 ```
 npm run devserver
 ```
 
-Using a proxy the whole application is now accessible under `localhost:3000`. All changes to the templates and JS/CSS
-files are immediately visible in the browser. Frontend unit tests can be executed with `npm run test`.
+Usando um proxy, a aplicação ficará acessível em `localhost:3000`. Todas as alterações em templates e arquivos JS/CSS são refletidas imediatamente no navegador. Os testes unitários de frontend podem ser executados com:
+
+```
+npm run test
+```
+
+---
 
 ## Build
 
-The application can be built using the following command:
+A aplicação pode ser empacotada com:
 
 ```
 mvnw clean package
 ```
 
-Node.js is automatically downloaded using the `frontend-maven-plugin` and the final JS/CSS files are integrated into the jar.
+O Node.js é baixado automaticamente pelo `frontend-maven-plugin`, e os arquivos JS/CSS finais são integrados ao JAR.
 
-Start your application with the following command - here with the profile `production`:
+Inicie sua aplicação com o perfil `production`:
 
 ```
 java -Dspring.profiles.active=production -jar ./target/fabbrini-0.0.1-SNAPSHOT.jar
 ```
 
-If required, a Docker image can be created with the Spring Boot plugin. Add `SPRING_PROFILES_ACTIVE=production` as
-environment variable when running the container.
+Se necessário, uma imagem Docker pode ser criada usando o plugin do Spring Boot. Adicione `SPRING_PROFILES_ACTIVE=production` como variável de ambiente ao executar o container:
 
 ```
 mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=br.com.kontongroup.api/fabbrini
 ```
 
-## Further readings
 
-* [Maven docs](https://maven.apache.org/guides/index.html)  
-* [Spring Boot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
-* [Spring Data JPA reference](https://docs.spring.io/spring-data/jpa/reference/jpa.html)
-* [Learn React](https://react.dev/learn)
-* [Webpack concepts](https://webpack.js.org/concepts/)  
-* [npm docs](https://docs.npmjs.com/)  
-* [Bootstrap docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/)  
+## Autores
+
+- [@douglasshibata](https://www.github.com/douglasshibata)
