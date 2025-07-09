@@ -1,109 +1,64 @@
-# API - Fabbrini
-Utilizado para o gerenciamento da aplicação do Fabbrini.
+# Fabbrini
 
-Desenvolvido utilizando ExpressJS e MongoDB.
+This app was created with Bootify.io - tips on working with the code [can be found here](https://bootify.io/next-steps/).
 
-<img src='https://github.com/douglasshibata/fabbrini/blob/main/src/assets/logo.png' logo='Logo do Fabbrini' />
+## Development
 
-Para rodar a aplicação 
+When starting the application `docker compose up` is called and the app will connect to the contained services.
+[Docker](https://www.docker.com/get-started/) must be available on the current system.
 
-Ter o Node.js instalado
-Para verificar a versão.
-```bash
-node -v
+During development it is recommended to use the profile `local`. In IntelliJ `-Dspring.profiles.active=local` can be
+added in the VM options of the Run Configuration after enabling this property in "Modify options". Create your own
+`application-local.properties` file to override settings for development.
+
+Lombok must be supported by your IDE. For IntelliJ install the Lombok plugin and enable annotation processing -
+[learn more](https://bootify.io/next-steps/spring-boot-with-lombok.html).
+
+In addition to the Spring Boot application, the DevServer must also be started - for this
+[Node.js](https://nodejs.org/) version 22 is required. On first usage and after updates the dependencies have to be installed:
+
+```
+npm install
 ```
 
-Ter o gerenciador de pacotes do Node.js que é o NPM.
-Para verificar a versão
-```bash
-npm -v
+The DevServer can be started as follows:
+
 ```
-Copiar o .env.example para .env e configurar as variáveis
-```bash
-cp .env.example ~/Path/to/folder/.env
-```
-Adicione a url do MongoDB Atlas na variável MONGO_URL
-```bash
-MONGO_URL = mongodb+srv://<username>:<password>@host/<dbname>?options
+npm run devserver
 ```
 
-Adicionar o hash secret para que seja providenciado um token válido
+Using a proxy the whole application is now accessible under `localhost:3000`. All changes to the templates and JS/CSS
+files are immediately visible in the browser. Frontend unit tests can be executed with `npm run test`.
 
-```bash
-secret = hash md5
+## Build
+
+The application can be built using the following command:
+
+```
+mvnw clean package
 ```
 
-Adicionar as credenciais de provedor de email para realizar o envio de email. 
-Utilizando a biblioteca do nodemailer e nodemailer-express-handlebars para realizar o envio de email e utilizar um template html para recuperação de senha
+Node.js is automatically downloaded using the `frontend-maven-plugin` and the final JS/CSS files are integrated into the jar.
 
-```bash
-MAIL_HOST=
-MAIL_PORT=
-MAIL_USER=
-MAIL_PASS=
+Start your application with the following command - here with the profile `production`:
+
+```
+java -Dspring.profiles.active=production -jar ./target/fabbrini-0.0.1-SNAPSHOT.jar
 ```
 
-Adicionar a url do frontend para que seja enviado o email com o endereço correto.
-```bash
-FRONT_URL=
+If required, a Docker image can be created with the Spring Boot plugin. Add `SPRING_PROFILES_ACTIVE=production` as
+environment variable when running the container.
+
+```
+mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=br.com.kontongroup.api/fabbrini
 ```
 
-Baixar as dependencias
-```bash
-npm install 
-```
+## Further readings
 
-Para executar o Projeto
-
-```bash
-node src/server.js
-```
-ou 
-```bash
-npm run dev
-```
-
-Deploy no Heroku
-criar arquivo Procfile e adicionar 
-```bash
-web:npm start 
-```
-### Usando mongodb no localhost
-#### Rodando com docker 
-```bash
- docker run --name some-mongo -d mongo:latest
-```
-
-#### Criando banco de dados no mongodb
-```bash
-use fabbrini
-```
-#### Criando Usuário no mongodb 
-```bash
-db.createUser({ user:"fabbrini", pwd:passwordPrompt(),roles:[{role:"readWrite",db:"fabbrini"}]}) 
-```
-
-### Configurações cron 
-#### Campos permitidos
-```
- # ┌────────────── segundos (opicional)
- # │ ┌──────────── minutos
- # │ │ ┌────────── hora
- # │ │ │ ┌──────── dia do mês
- # │ │ │ │ ┌────── mês
- # │ │ │ │ │ ┌──── dia da semana
- # │ │ │ │ │ │
- # │ │ │ │ │ │
- # * * * * * *
-```
-
-### Valores permitidos
-
-|     campo    |        valor        |
-|--------------|---------------------|
-|   segundos   |         0-59        |
-|    minutos   |         0-59        |
-|     hora     |         0-23        |
-|  dia do mês  |         1-31        |
-|     mês      |     1-12            |
-| dia da semana|   0-7               |
+* [Maven docs](https://maven.apache.org/guides/index.html)  
+* [Spring Boot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
+* [Spring Data JPA reference](https://docs.spring.io/spring-data/jpa/reference/jpa.html)
+* [Learn React](https://react.dev/learn)
+* [Webpack concepts](https://webpack.js.org/concepts/)  
+* [npm docs](https://docs.npmjs.com/)  
+* [Bootstrap docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/)  
