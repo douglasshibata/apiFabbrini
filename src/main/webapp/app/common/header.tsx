@@ -11,8 +11,8 @@ export default function Header() {
       <div className="container">
         <nav className="navbar navbar-light navbar-expand-md">
           <Link to="/" className="navbar-brand">
-            <img src="/images/logo.png" alt={t('app.title')} width="30" height="30" className="d-inline-block align-top" />
-            <span className="ps-1">{t('app.title')}</span>
+            <img src="/images/logo.png" alt={t('app.title')} width="100%" height="30" className="d-inline-block align-top" />
+            {/* <span className="ps-1">{t('app.title')}</span> */}
           </Link>
           <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
               aria-label={t('navigation.toggle')} aria-controls="navbarToggle" aria-expanded="false">

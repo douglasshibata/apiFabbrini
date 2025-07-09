@@ -895,7 +895,7 @@
     "success": "Your operation was successful."
   },
   "required": "Please provide a value.",
-  "maxlength": "Your value must have a length of less then ${max} characters.",
+  "maxlength": "Your value must have a length of less than ${max} characters.",
   "valid": {
     "uuid": "Please provide a valid UUID, for example \"e5cfaf62-c63e-30cc-9c3d-568ff3e9490e\".",
     "number": "Please provide a valid number."

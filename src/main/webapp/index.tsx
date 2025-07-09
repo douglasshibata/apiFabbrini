@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
 import axios from 'axios';
 import translation from './translation.json';
+import translationPTBR from './translationPT_BR.json';
 import AppRoutes from './app/routes';
 import 'bootstrap';
 import './index.scss';
@@ -13,10 +14,11 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
+      ptBR: { translation: translationPTBR },
       en: { translation: translation },
     },
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: 'ptBR',
+    fallbackLng: 'ptBR',
     interpolation: {
       escapeValue: false
     }

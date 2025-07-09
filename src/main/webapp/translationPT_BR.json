@@ -1,0 +1,903 @@
+{
+  "app": {
+    "title": "Fabbrini"
+  },
+  "navigation": {
+    "toggle": "Alternar navegação",
+    "home": "Início",
+    "entities": "Entidades"
+  },
+  "home": {
+    "index": {
+      "headline": "Bem-vindo ao seu novo aplicativo!",
+      "text": "Seu aplicativo foi criado com <a href=\"https://bootify.io\" target=\"_blank\">Bootify.io</a> e agora pode ser personalizado. Se você estiver satisfeito com o resultado, <strong>por favor, recomende-nos a outros desenvolvedores</strong> - assim o Bootify.io pode crescer ainda mais.",
+      "swagger": {
+        "text": "Swagger está",
+        "link": "disponível aqui"
+      },
+      "exploreEntities": "Explore suas entidades"
+    }
+  },
+  "error": {
+    "page": {
+      "headline": "Erro",
+      "message": "A página que você está procurando não está disponível no momento."
+    }
+  },
+  "phones": {
+    "list": {
+      "headline": "Telefones",
+      "createNew": "Criar novo Telefone",
+      "empty": "Nenhum Telefone encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Telefone",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "ddd": {
+      "label": "DDD"
+    },
+    "number": {
+      "label": "Número"
+    },
+    "user": {
+      "label": "Usuário"
+    },
+    "edit": {
+      "headline": "Editar Telefone",
+      "back": "Voltar para a lista"
+    },
+    "responsible": {
+      "phones": {
+        "referenced": "Esta entidade ainda está referenciada por Responsável {{id}} via campo Telefones."
+      }
+    },
+    "create": {
+      "success": "Telefone criado com sucesso."
+    },
+    "update": {
+      "success": "Telefone atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Telefone removido com sucesso."
+    }
+  },
+  "user": {
+    "list": {
+      "headline": "Usuários",
+      "createNew": "Criar novo Usuário",
+      "empty": "Nenhum Usuário encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Usuário",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "email": {
+      "label": "E-mail"
+    },
+    "password": {
+      "label": "Senha"
+    },
+    "fullname": {
+      "label": "Nome completo"
+    },
+    "active": {
+      "label": "Ativo"
+    },
+    "socialname": {
+      "label": "Nome social"
+    },
+    "cpf": {
+      "label": "CPF"
+    },
+    "crm": {
+      "label": "CRM"
+    },
+    "countAccess": {
+      "label": "Contagem de acessos"
+    },
+    "role": {
+      "label": "Função"
+    },
+    "edit": {
+      "headline": "Editar Usuário",
+      "back": "Voltar para a lista"
+    },
+    "phones": {
+      "user": {
+        "referenced": "Esta entidade ainda está referenciada por Telefone {{id}} via campo Usuário."
+      }
+    },
+    "address": {
+      "user": {
+        "referenced": "Esta entidade ainda está referenciada por Endereço {{id}} via campo Usuário."
+      }
+    },
+    "doctor": {
+      "user": {
+        "referenced": "Esta entidade ainda está referenciada por Médico {{id}} via campo Usuário."
+      }
+    },
+    "patient": {
+      "user": {
+        "referenced": "Esta entidade ainda está referenciada por Paciente {{id}} via campo Usuário."
+      }
+    },
+    "create": {
+      "success": "Usuário criado com sucesso."
+    },
+    "update": {
+      "success": "Usuário atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Usuário removido com sucesso."
+    }
+  },
+  "address": {
+    "list": {
+      "headline": "Endereços",
+      "createNew": "Criar novo Endereço",
+      "empty": "Nenhum Endereço encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Endereço",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "address": {
+      "label": "Endereço"
+    },
+    "cep": {
+      "label": "CEP"
+    },
+    "complement": {
+      "label": "Complemento"
+    },
+    "neighbourhood": {
+      "label": "Bairro"
+    },
+    "number": {
+      "label": "Número"
+    },
+    "city": {
+      "label": "Cidade"
+    },
+    "uf": {
+      "label": "UF"
+    },
+    "user": {
+      "label": "Usuário"
+    },
+    "edit": {
+      "headline": "Editar Endereço",
+      "back": "Voltar para a lista"
+    },
+    "create": {
+      "success": "Endereço criado com sucesso."
+    },
+    "update": {
+      "success": "Endereço atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Endereço removido com sucesso."
+    }
+  },
+  "role": {
+    "list": {
+      "headline": "Funções",
+      "createNew": "Criar nova Função",
+      "empty": "Nenhuma Função encontrada.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Função",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "type": {
+      "label": "Tipo"
+    },
+    "edit": {
+      "headline": "Editar Função",
+      "back": "Voltar para a lista"
+    },
+    "user": {
+      "role": {
+        "referenced": "Esta entidade ainda está referenciada por Usuário {{id}} via campo Função."
+      }
+    },
+    "create": {
+      "success": "Função criada com sucesso."
+    },
+    "update": {
+      "success": "Função atualizada com sucesso."
+    },
+    "delete": {
+      "success": "Função removida com sucesso."
+    }
+  },
+  "doctor": {
+    "list": {
+      "headline": "Médicos",
+      "createNew": "Criar novo Médico",
+      "empty": "Nenhum Médico encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Médico",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "conselho": {
+      "label": "Conselho"
+    },
+    "ufconselho": {
+      "label": "UF do Conselho"
+    },
+    "registro": {
+      "label": "Registro"
+    },
+    "title": {
+      "label": "Título"
+    },
+    "user": {
+      "label": "Usuário"
+    },
+    "specialty": {
+      "label": "Especialidade"
+    },
+    "healthinsurances": {
+      "label": "Convênios"
+    },
+    "documents": {
+      "label": "Documentos"
+    },
+    "edit": {
+      "headline": "Editar Médico",
+      "back": "Voltar para a lista"
+    },
+    "doctorsAvailableSchedule": {
+      "doctor": {
+        "referenced": "Esta entidade ainda está referenciada por Agenda Disponível do Médico {{id}} via campo Médico."
+      }
+    },
+    "create": {
+      "success": "Médico criado com sucesso."
+    },
+    "update": {
+      "success": "Médico atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Médico removido com sucesso."
+    }
+  },
+  "specialty": {
+    "list": {
+      "headline": "Especialidades",
+      "createNew": "Criar nova Especialidade",
+      "empty": "Nenhuma Especialidade encontrada.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Especialidade",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "name": {
+      "label": "Nome"
+    },
+    "description": {
+      "label": "Descrição"
+    },
+    "edit": {
+      "headline": "Editar Especialidade",
+      "back": "Voltar para a lista"
+    },
+    "doctor": {
+      "specialty": {
+        "referenced": "Esta entidade ainda está referenciada por Médico {{id}} via campo Especialidade."
+      }
+    },
+    "create": {
+      "success": "Especialidade criada com sucesso."
+    },
+    "update": {
+      "success": "Especialidade atualizada com sucesso."
+    },
+    "delete": {
+      "success": "Especialidade removida com sucesso."
+    }
+  },
+  "healthInsurance": {
+    "list": {
+      "headline": "Convênios",
+      "createNew": "Criar novo Convênio",
+      "empty": "Nenhum Convênio encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Convênio",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "number": {
+      "label": "Número"
+    },
+    "type": {
+      "label": "Tipo"
+    },
+    "plan": {
+      "label": "Plano"
+    },
+    "carrier": {
+      "label": "Operadora"
+    },
+    "active": {
+      "label": "Ativo"
+    },
+    "documents": {
+      "label": "Documentos"
+    },
+    "edit": {
+      "headline": "Editar Convênio",
+      "back": "Voltar para a lista"
+    },
+    "doctor": {
+      "healthinsurances": {
+        "referenced": "Esta entidade ainda está referenciada por Médico {{id}} via campo Convênios."
+      }
+    },
+    "patient": {
+      "healthInsurances": {
+        "referenced": "Esta entidade ainda está referenciada por Paciente {{id}} via campo Convênios."
+      }
+    },
+    "create": {
+      "success": "Convênio criado com sucesso."
+    },
+    "update": {
+      "success": "Convênio atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Convênio removido com sucesso."
+    }
+  },
+  "document": {
+    "list": {
+      "headline": "Documentos",
+      "createNew": "Criar novo Documento",
+      "empty": "Nenhum Documento encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Documento",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "documentType": {
+      "label": "Tipo de Documento"
+    },
+    "file": {
+      "label": "Arquivo"
+    },
+    "filename": {
+      "label": "Nome do Arquivo"
+    },
+    "fileType": {
+      "label": "Tipo de Arquivo"
+    },
+    "edit": {
+      "headline": "Editar Documento",
+      "back": "Voltar para a lista"
+    },
+    "healthInsurance": {
+      "documents": {
+        "referenced": "Esta entidade ainda está referenciada por Convênio {{id}} via campo Documentos."
+      }
+    },
+    "doctor": {
+      "documents": {
+        "referenced": "Esta entidade ainda está referenciada por Médico {{id}} via campo Documentos."
+      }
+    },
+    "patient": {
+      "documents": {
+        "referenced": "Esta entidade ainda está referenciada por Paciente {{id}} via campo Documentos."
+      }
+    },
+    "create": {
+      "success": "Documento criado com sucesso."
+    },
+    "update": {
+      "success": "Documento atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Documento removido com sucesso."
+    }
+  },
+  "patient": {
+    "list": {
+      "headline": "Pacientes",
+      "createNew": "Criar novo Paciente",
+      "empty": "Nenhum Paciente encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Paciente",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "fullname": {
+      "label": "Nome completo"
+    },
+    "cpf": {
+      "label": "CPF"
+    },
+    "rg": {
+      "label": "RG"
+    },
+    "socialname": {
+      "label": "Nome social"
+    },
+    "user": {
+      "label": "Usuário"
+    },
+    "documents": {
+      "label": "Documentos"
+    },
+    "healthInsurances": {
+      "label": "Convênios"
+    },
+    "edit": {
+      "headline": "Editar Paciente",
+      "back": "Voltar para a lista"
+    },
+    "responsible": {
+      "patient": {
+        "referenced": "Esta entidade ainda está referenciada por Responsável {{id}} via campo Paciente."
+      }
+    },
+    "schedule": {
+      "patient": {
+        "referenced": "Esta entidade ainda está referenciada por Agenda {{id}} via campo Paciente."
+      }
+    },
+    "create": {
+      "success": "Paciente criado com sucesso."
+    },
+    "update": {
+      "success": "Paciente atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Paciente removido com sucesso."
+    }
+  },
+  "responsible": {
+    "list": {
+      "headline": "Responsáveis",
+      "createNew": "Criar novo Responsável",
+      "empty": "Nenhum Responsável encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Responsável",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "name": {
+      "label": "Nome"
+    },
+    "degreeOfRelatedness": {
+      "label": "Grau de Parentesco"
+    },
+    "phones": {
+      "label": "Telefones"
+    },
+    "patient": {
+      "label": "Paciente"
+    },
+    "edit": {
+      "headline": "Editar Responsável",
+      "back": "Voltar para a lista"
+    },
+    "create": {
+      "success": "Responsável criado com sucesso."
+    },
+    "update": {
+      "success": "Responsável atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Responsável removido com sucesso."
+    }
+  },
+  "passwordToken": {
+    "list": {
+      "headline": "Tokens de Senha",
+      "createNew": "Criar novo Token de Senha",
+      "empty": "Nenhum Token de Senha encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Token de Senha",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "token": {
+      "label": "Token"
+    },
+    "expirationTime": {
+      "label": "Data de Expiração"
+    },
+    "typeToken": {
+      "label": "Tipo de Token"
+    },
+    "used": {
+      "label": "Usado"
+    },
+    "edit": {
+      "headline": "Editar Token de Senha",
+      "back": "Voltar para a lista"
+    },
+    "create": {
+      "success": "Token de Senha criado com sucesso."
+    },
+    "update": {
+      "success": "Token de Senha atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Token de Senha removido com sucesso."
+    }
+  },
+  "alert": {
+    "list": {
+      "headline": "Alertas",
+      "createNew": "Criar novo Alerta",
+      "empty": "Nenhum Alerta encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Alerta",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "description": {
+      "label": "Descrição"
+    },
+    "expirationTime": {
+      "label": "Data de Expiração"
+    },
+    "active": {
+      "label": "Ativo"
+    },
+    "alertType": {
+      "label": "Tipo de Alerta"
+    },
+    "edit": {
+      "headline": "Editar Alerta",
+      "back": "Voltar para a lista"
+    },
+    "create": {
+      "success": "Alerta criado com sucesso."
+    },
+    "update": {
+      "success": "Alerta atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Alerta removido com sucesso."
+    }
+  },
+  "newsletter": {
+    "list": {
+      "headline": "Newsletters",
+      "createNew": "Criar nova Newsletter",
+      "empty": "Nenhuma Newsletter encontrada.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Newsletter",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "title": {
+      "label": "Título"
+    },
+    "content": {
+      "label": "Conteúdo"
+    },
+    "file": {
+      "label": "Arquivo"
+    },
+    "deliveryDate": {
+      "label": "Data de Entrega"
+    },
+    "edit": {
+      "headline": "Editar Newsletter",
+      "back": "Voltar para a lista"
+    },
+    "emails": {
+      "newsletter": {
+        "referenced": "Esta entidade ainda está referenciada por E-mails {{id}} via campo Newsletter."
+      }
+    },
+    "create": {
+      "success": "Newsletter criada com sucesso."
+    },
+    "update": {
+      "success": "Newsletter atualizada com sucesso."
+    },
+    "delete": {
+      "success": "Newsletter removida com sucesso."
+    }
+  },
+  "emails": {
+    "list": {
+      "headline": "E-mails",
+      "createNew": "Criar novo E-mail",
+      "empty": "Nenhum E-mail encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar E-mail",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "email": {
+      "label": "E-mail"
+    },
+    "active": {
+      "label": "Ativo"
+    },
+    "newsletter": {
+      "label": "Newsletter"
+    },
+    "edit": {
+      "headline": "Editar E-mail",
+      "back": "Voltar para a lista"
+    },
+    "create": {
+      "success": "E-mail criado com sucesso."
+    },
+    "update": {
+      "success": "E-mail atualizado com sucesso."
+    },
+    "delete": {
+      "success": "E-mail removido com sucesso."
+    }
+  },
+  "schedule": {
+    "list": {
+      "headline": "Agendas",
+      "createNew": "Criar nova Agenda",
+      "empty": "Nenhuma Agenda encontrada.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Agenda",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "appoimentTime": {
+      "label": "Horário da Consulta"
+    },
+    "videoHashLink": {
+      "label": "Link do Vídeo"
+    },
+    "note": {
+      "label": "Observação"
+    },
+    "patient": {
+      "label": "Paciente"
+    },
+    "doctorsAvailableSchedule": {
+      "label": "Agenda Disponível do Médico"
+    },
+    "edit": {
+      "headline": "Editar Agenda",
+      "back": "Voltar para a lista"
+    },
+    "medicalRecord": {
+      "schedule": {
+        "referenced": "Esta entidade ainda está referenciada por Prontuário {{id}} via campo Agenda."
+      }
+    },
+    "create": {
+      "success": "Agenda criada com sucesso."
+    },
+    "update": {
+      "success": "Agenda atualizada com sucesso."
+    },
+    "delete": {
+      "success": "Agenda removida com sucesso."
+    }
+  },
+  "medicalRecord": {
+    "list": {
+      "headline": "Prontuários",
+      "createNew": "Criar novo Prontuário",
+      "empty": "Nenhum Prontuário encontrado.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Prontuário",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "notes": {
+      "label": "Notas"
+    },
+    "schedule": {
+      "label": "Agenda"
+    },
+    "edit": {
+      "headline": "Editar Prontuário",
+      "back": "Voltar para a lista"
+    },
+    "create": {
+      "success": "Prontuário criado com sucesso."
+    },
+    "update": {
+      "success": "Prontuário atualizado com sucesso."
+    },
+    "delete": {
+      "success": "Prontuário removido com sucesso."
+    }
+  },
+  "doctorsAvailableSchedule": {
+    "list": {
+      "headline": "Agendas Disponíveis dos Médicos",
+      "createNew": "Criar nova Agenda Disponível do Médico",
+      "empty": "Nenhuma Agenda Disponível encontrada.",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "add": {
+      "headline": "Adicionar Agenda Disponível do Médico",
+      "back": "Voltar para a lista"
+    },
+    "id": {
+      "label": "Id"
+    },
+    "dayOfWeek": {
+      "label": "Dia da Semana"
+    },
+    "startDateTime": {
+      "label": "Data e Hora de Início"
+    },
+    "endDateTime": {
+      "label": "Data e Hora de Término"
+    },
+    "interval": {
+      "label": "Intervalo"
+    },
+    "active": {
+      "label": "Ativo"
+    },
+    "doctor": {
+      "label": "Médico"
+    },
+    "edit": {
+      "headline": "Editar Agenda Disponível do Médico",
+      "back": "Voltar para a lista"
+    },
+    "schedule": {
+      "doctorsAvailableSchedule": {
+        "referenced": "Esta entidade ainda está referenciada por Agenda {{id}} via campo Agenda Disponível do Médico."
+      }
+    },
+    "create": {
+      "success": "Agenda Disponível do Médico criada com sucesso."
+    },
+    "update": {
+      "success": "Agenda Disponível do Médico atualizada com sucesso."
+    },
+    "delete": {
+      "success": "Agenda Disponível do Médico removida com sucesso."
+    }
+  },
+  "exists": {
+    "user": {
+      "email": "Este e-mail já está em uso.",
+      "cpf": "Este CPF já está em uso."
+    },
+    "role": {
+      "type": "Este tipo já está em uso."
+    },
+    "patient": {
+      "cpf": "Este CPF já está em uso."
+    }
+  },
+  "Exists": {
+    "user": {
+      "role": "Esta Função já está referenciada por outro Usuário."
+    },
+    "doctor": {
+      "user": "Este Usuário já está referenciado por outro Médico."
+    },
+    "patient": {
+      "user": "Este Usuário já está referenciado por outro Paciente."
+    },
+    "medicalRecord": {
+      "schedule": "Esta Agenda já está referenciada por outro Prontuário."
+    }
+  },
+  "NotNull": {
+    "document": {
+      "documentType": "Por favor, selecione um Tipo de Documento."
+    }
+  },
+  "select": {
+    "empty": {
+      "label": "Por favor, selecione"
+    }
+  },
+  "file": {
+    "delete": "Excluir",
+    "open": "Abrir"
+  },
+  "VALID_FILE_TYPE": "Por favor, forneça um tipo de arquivo válido.",
+  "delete": {
+    "confirm": "Você realmente deseja excluir este elemento? Isso não pode ser desfeito."
+  },
+  "operation": {
+    "success": "Sua operação foi realizada com sucesso."
+  },
+  "required": "Por favor, forneça um valor.",
+  "maxlength": "Seu valor deve ter menos de ${max} caracteres.",
+  "valid": {
+    "uuid": "Por favor, forneça um UUID válido, por exemplo \"e5cfaf62-c63e-30cc-9c3d-568ff3e9490e\".",
+    "number": "Por favor, forneça um número válido."
+  }
+}
