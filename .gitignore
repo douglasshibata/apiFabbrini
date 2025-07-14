@@ -9,11 +9,7 @@ application-local.properties
 uploads/
 node/
 node_modules/
-coverage/
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.angular/cache
 
 ## IntelliJ IDEA
 .idea
@@ -42,4 +38,3 @@ coverage/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-.env

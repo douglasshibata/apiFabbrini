@@ -1,0 +1,14 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@schedule.add.headline">Add Schedule</h1>
+    <div>
+        <a routerLink="/schedules" class="btn btn-secondary" i18n="@@schedule.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="appoimentTime" rowType="datetimepicker" i18n-label="@@schedule.appoimentTime.label" label="Appoiment Time" />
+    <app-input-row [group]="addForm" field="videoHashLink" i18n-label="@@schedule.videoHashLink.label" label="Video Hash Link" />
+    <app-input-row [group]="addForm" field="note" rowType="textarea" i18n-label="@@schedule.note.label" label="Note" />
+    <app-input-row [group]="addForm" field="patient" rowType="select" [options]="patientValues" i18n-label="@@schedule.patient.label" label="Patient" />
+    <app-input-row [group]="addForm" field="doctorsAvailableSchedule" rowType="select" [options]="doctorsAvailableScheduleValues" i18n-label="@@schedule.doctorsAvailableSchedule.label" label="Doctors Available Schedule" />
+    <input type="submit" i18n-value="@@schedule.add.headline" value="Add Schedule" class="btn btn-primary mt-4" />
+</form>

@@ -1,8 +1,11 @@
 package br.com.kontongroup.api.fabbrini.domain;
 
+import br.com.kontongroup.api.fabbrini.model.RoleType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -38,7 +41,8 @@ public class Role {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private RoleType type;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

@@ -1,0 +1,35 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@medicalRecord.list.headline">Medical Records</h1>
+    <div>
+        <a routerLink="/medicalRecords/add" class="btn btn-primary ms-2" i18n="@@medicalRecord.list.createNew">Create new Medical Record</a>
+    </div>
+</div>
+@if (!medicalRecords || medicalRecords.length === 0) {
+<div i18n="@@medicalRecord.list.empty">No Medical Records could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@medicalRecord.id.label">Id</th>
+                <th scope="col" i18n="@@medicalRecord.schedule.label">Schedule</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (medicalRecord of medicalRecords; track medicalRecord.id) {
+            <tr>
+                <td>{{ medicalRecord.id }}</td>
+                <td>{{ medicalRecord.schedule }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/medicalRecords/edit', medicalRecord.id]" class="btn btn-sm btn-secondary" i18n="@@medicalRecord.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(medicalRecord.id!)" class="btn btn-sm btn-secondary" i18n="@@medicalRecord.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

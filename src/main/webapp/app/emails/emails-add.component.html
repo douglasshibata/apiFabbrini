@@ -1,0 +1,12 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@emails.add.headline">Add Emails</h1>
+    <div>
+        <a routerLink="/emailss" class="btn btn-secondary" i18n="@@emails.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="email" i18n-label="@@emails.email.label" label="Email" />
+    <app-input-row [group]="addForm" field="active" rowType="checkbox" i18n-label="@@emails.active.label" label="Active" />
+    <app-input-row [group]="addForm" field="newsletter" rowType="select" [options]="newsletterValues" i18n-label="@@emails.newsletter.label" label="Newsletter" />
+    <input type="submit" i18n-value="@@emails.add.headline" value="Add Emails" class="btn btn-primary mt-4" />
+</form>

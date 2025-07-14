@@ -1,0 +1,41 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@responsible.list.headline">Responsibles</h1>
+    <div>
+        <a routerLink="/responsibles/add" class="btn btn-primary ms-2" i18n="@@responsible.list.createNew">Create new Responsible</a>
+    </div>
+</div>
+@if (!responsibles || responsibles.length === 0) {
+<div i18n="@@responsible.list.empty">No Responsibles could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@responsible.id.label">Id</th>
+                <th scope="col" i18n="@@responsible.name.label">Name</th>
+                <th scope="col" i18n="@@responsible.degreeOfRelatedness.label">Degree Of Relatedness</th>
+                <th scope="col" i18n="@@responsible.phones.label">Phones</th>
+                <th scope="col" i18n="@@responsible.patient.label">Patient</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (responsible of responsibles; track responsible.id) {
+            <tr>
+                <td>{{ responsible.id }}</td>
+                <td>{{ responsible.name }}</td>
+                <td>{{ responsible.degreeOfRelatedness }}</td>
+                <td>{{ responsible.phones }}</td>
+                <td>{{ responsible.patient }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/responsibles/edit', responsible.id]" class="btn btn-sm btn-secondary" i18n="@@responsible.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(responsible.id!)" class="btn btn-sm btn-secondary" i18n="@@responsible.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

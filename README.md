@@ -1,14 +1,13 @@
-
 # Fabbrini
 
 Projeto de telemedicina para realizar teleconsultas para ajudar na área da saúde
 
-![Logo](https://github.com/douglasshibata/apiFabbrini/blob/refactor_api/src/main/webapp/public/images/logo.png?raw=true)
+![Logo](https://github.com/douglasshibata/apiFabbrini/blob/refactor_api/src/main/webapp/public/logo.png?raw=true)
 
 
 ## Stack utilizada
 
-**Front-end:** React, Bootstrap
+**Front-end:** Angular, Bootstrap
 
 **Back-end:** Java, Spring boot
 
@@ -25,20 +24,21 @@ Durante o desenvolvimento, recomenda-se usar o perfil `local`. No IntelliJ, apó
 Além da aplicação Spring Boot, é necessário iniciar também o DevServer. Para isso, é preciso ter o [Node.js](https://nodejs.org/) versão 22. Na primeira vez e após atualizações, instale as dependências:
 
 ```
+npm install -g @angular/cli
 npm install
 ```
 
-Em seguida, inicie o DevServer com:
+Executar o servidor
 
 ```
-npm run devserver
+ng serve
 ```
 
-Usando um proxy, a aplicação ficará acessível em `localhost:3000`. Todas as alterações em templates e arquivos JS/CSS são refletidas imediatamente no navegador. Os testes unitários de frontend podem ser executados com:
+Your application is now accessible under `localhost:4200`.
 
-```
-npm run test
-```
+Add code using Angular schematics with `ng generate ...`.
+Frontend unit tests can be executed with `ng test`.
+Generate a messages.json for translation with `ng extract-i18n --format=json`.
 
 ---
 

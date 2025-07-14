@@ -1,0 +1,45 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@doctor.list.headline">Doctors</h1>
+    <div>
+        <a routerLink="/doctors/add" class="btn btn-primary ms-2" i18n="@@doctor.list.createNew">Create new Doctor</a>
+    </div>
+</div>
+@if (!doctors || doctors.length === 0) {
+<div i18n="@@doctor.list.empty">No Doctors could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@doctor.id.label">Id</th>
+                <th scope="col" i18n="@@doctor.conselho.label">Conselho</th>
+                <th scope="col" i18n="@@doctor.ufconselho.label">Ufconselho</th>
+                <th scope="col" i18n="@@doctor.registro.label">Registro</th>
+                <th scope="col" i18n="@@doctor.title.label">Title</th>
+                <th scope="col" i18n="@@doctor.user.label">User</th>
+                <th scope="col" i18n="@@doctor.specialty.label">Specialty</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (doctor of doctors; track doctor.id) {
+            <tr>
+                <td>{{ doctor.id }}</td>
+                <td>{{ doctor.conselho }}</td>
+                <td>{{ doctor.ufconselho }}</td>
+                <td>{{ doctor.registro }}</td>
+                <td>{{ doctor.title }}</td>
+                <td>{{ doctor.user }}</td>
+                <td>{{ doctor.specialty }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/doctors/edit', doctor.id]" class="btn btn-sm btn-secondary" i18n="@@doctor.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(doctor.id!)" class="btn btn-sm btn-secondary" i18n="@@doctor.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

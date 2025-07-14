@@ -1,0 +1,12 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@medicalRecord.edit.headline">Edit Medical Record</h1>
+    <div>
+        <a routerLink="/medicalRecords" class="btn btn-secondary" i18n="@@medicalRecord.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@medicalRecord.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="notes" rowType="textarea" i18n-label="@@medicalRecord.notes.label" label="Notes" />
+    <app-input-row [group]="editForm" field="schedule" rowType="select" [options]="scheduleValues" i18n-label="@@medicalRecord.schedule.label" label="Schedule" />
+    <input type="submit" i18n-value="@@medicalRecord.edit.headline" value="Edit Medical Record" class="btn btn-primary mt-4" />
+</form>

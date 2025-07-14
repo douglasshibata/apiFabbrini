@@ -1,0 +1,13 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@alert.add.headline">Add Alert</h1>
+    <div>
+        <a routerLink="/alerts" class="btn btn-secondary" i18n="@@alert.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="description" rowType="textarea" i18n-label="@@alert.description.label" label="Description" />
+    <app-input-row [group]="addForm" field="expirationTime" rowType="datetimepicker" i18n-label="@@alert.expirationTime.label" label="Expiration Time" />
+    <app-input-row [group]="addForm" field="active" rowType="checkbox" i18n-label="@@alert.active.label" label="Active" />
+    <app-input-row [group]="addForm" field="alertType" i18n-label="@@alert.alertType.label" label="Alert Type" />
+    <input type="submit" i18n-value="@@alert.add.headline" value="Add Alert" class="btn btn-primary mt-4" />
+</form>

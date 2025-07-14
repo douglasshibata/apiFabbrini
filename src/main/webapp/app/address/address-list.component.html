@@ -1,0 +1,47 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@address.list.headline">Addresses</h1>
+    <div>
+        <a routerLink="/addresses/add" class="btn btn-primary ms-2" i18n="@@address.list.createNew">Create new Address</a>
+    </div>
+</div>
+@if (!addresses || addresses.length === 0) {
+<div i18n="@@address.list.empty">No Addresses could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@address.id.label">Id</th>
+                <th scope="col" i18n="@@address.address.label">Address</th>
+                <th scope="col" i18n="@@address.cep.label">Cep</th>
+                <th scope="col" i18n="@@address.complement.label">Complement</th>
+                <th scope="col" i18n="@@address.neighbourhood.label">Neighbourhood</th>
+                <th scope="col" i18n="@@address.number.label">Number</th>
+                <th scope="col" i18n="@@address.city.label">City</th>
+                <th scope="col" i18n="@@address.uf.label">Uf</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (address of addresses; track address.id) {
+            <tr>
+                <td>{{ address.id }}</td>
+                <td>{{ address.address }}</td>
+                <td>{{ address.cep }}</td>
+                <td>{{ address.complement }}</td>
+                <td>{{ address.neighbourhood }}</td>
+                <td>{{ address.number }}</td>
+                <td>{{ address.city }}</td>
+                <td>{{ address.uf }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/addresses/edit', address.id]" class="btn btn-sm btn-secondary" i18n="@@address.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(address.id!)" class="btn btn-sm btn-secondary" i18n="@@address.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

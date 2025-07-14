@@ -1,0 +1,17 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@patient.edit.headline">Edit Patient</h1>
+    <div>
+        <a routerLink="/patients" class="btn btn-secondary" i18n="@@patient.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@patient.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="fullname" i18n-label="@@patient.fullname.label" label="Fullname" />
+    <app-input-row [group]="editForm" field="cpf" i18n-label="@@patient.cpf.label" label="Cpf" />
+    <app-input-row [group]="editForm" field="rg" i18n-label="@@patient.rg.label" label="Rg" />
+    <app-input-row [group]="editForm" field="socialname" i18n-label="@@patient.socialname.label" label="Socialname" />
+    <app-input-row [group]="editForm" field="user" rowType="select" [options]="userValues" i18n-label="@@patient.user.label" label="User" />
+    <app-input-row [group]="editForm" field="documents" rowType="multiselect" [options]="documentsValues" i18n-label="@@patient.documents.label" label="Documents" />
+    <app-input-row [group]="editForm" field="healthInsurances" rowType="multiselect" [options]="healthInsurancesValues" i18n-label="@@patient.healthInsurances.label" label="Health Insurances" />
+    <input type="submit" i18n-value="@@patient.edit.headline" value="Edit Patient" class="btn btn-primary mt-4" />
+</form>

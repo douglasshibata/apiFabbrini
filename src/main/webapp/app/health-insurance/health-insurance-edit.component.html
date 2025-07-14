@@ -1,0 +1,16 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@healthInsurance.edit.headline">Edit Health Insurance</h1>
+    <div>
+        <a routerLink="/healthInsurances" class="btn btn-secondary" i18n="@@healthInsurance.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@healthInsurance.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="number" i18n-label="@@healthInsurance.number.label" label="Number" />
+    <app-input-row [group]="editForm" field="type" i18n-label="@@healthInsurance.type.label" label="Type" />
+    <app-input-row [group]="editForm" field="plan" i18n-label="@@healthInsurance.plan.label" label="Plan" />
+    <app-input-row [group]="editForm" field="carrier" i18n-label="@@healthInsurance.carrier.label" label="Carrier" />
+    <app-input-row [group]="editForm" field="active" rowType="checkbox" i18n-label="@@healthInsurance.active.label" label="Active" />
+    <app-input-row [group]="editForm" field="documents" rowType="multiselect" [options]="documentsValues" i18n-label="@@healthInsurance.documents.label" label="Documents" />
+    <input type="submit" i18n-value="@@healthInsurance.edit.headline" value="Edit Health Insurance" class="btn btn-primary mt-4" />
+</form>

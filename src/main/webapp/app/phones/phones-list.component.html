@@ -1,0 +1,39 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@phones.list.headline">Phoneses</h1>
+    <div>
+        <a routerLink="/phoness/add" class="btn btn-primary ms-2" i18n="@@phones.list.createNew">Create new Phones</a>
+    </div>
+</div>
+@if (!phoneses || phoneses.length === 0) {
+<div i18n="@@phones.list.empty">No Phoneses could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@phones.id.label">Id</th>
+                <th scope="col" i18n="@@phones.ddd.label">Ddd</th>
+                <th scope="col" i18n="@@phones.number.label">Number</th>
+                <th scope="col" i18n="@@phones.user.label">User</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (phones of phoneses; track phones.id) {
+            <tr>
+                <td>{{ phones.id }}</td>
+                <td>{{ phones.ddd }}</td>
+                <td>{{ phones.number }}</td>
+                <td>{{ phones.user }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/phoness/edit', phones.id]" class="btn btn-sm btn-secondary" i18n="@@phones.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(phones.id!)" class="btn btn-sm btn-secondary" i18n="@@phones.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

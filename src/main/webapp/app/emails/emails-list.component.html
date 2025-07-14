@@ -1,0 +1,39 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@emails.list.headline">Emailses</h1>
+    <div>
+        <a routerLink="/emailss/add" class="btn btn-primary ms-2" i18n="@@emails.list.createNew">Create new Emails</a>
+    </div>
+</div>
+@if (!emailses || emailses.length === 0) {
+<div i18n="@@emails.list.empty">No Emailses could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@emails.id.label">Id</th>
+                <th scope="col" i18n="@@emails.email.label">Email</th>
+                <th scope="col" i18n="@@emails.active.label">Active</th>
+                <th scope="col" i18n="@@emails.newsletter.label">Newsletter</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (emails of emailses; track emails.id) {
+            <tr>
+                <td>{{ emails.id }}</td>
+                <td>{{ emails.email }}</td>
+                <td>{{ emails.active }}</td>
+                <td>{{ emails.newsletter }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/emailss/edit', emails.id]" class="btn btn-sm btn-secondary" i18n="@@emails.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(emails.id!)" class="btn btn-sm btn-secondary" i18n="@@emails.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

@@ -1,0 +1,13 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@responsible.add.headline">Add Responsible</h1>
+    <div>
+        <a routerLink="/responsibles" class="btn btn-secondary" i18n="@@responsible.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="name" i18n-label="@@responsible.name.label" label="Name" />
+    <app-input-row [group]="addForm" field="degreeOfRelatedness" i18n-label="@@responsible.degreeOfRelatedness.label" label="Degree Of Relatedness" />
+    <app-input-row [group]="addForm" field="phones" rowType="select" [options]="phonesValues" i18n-label="@@responsible.phones.label" label="Phones" />
+    <app-input-row [group]="addForm" field="patient" rowType="select" [options]="patientValues" i18n-label="@@responsible.patient.label" label="Patient" />
+    <input type="submit" i18n-value="@@responsible.add.headline" value="Add Responsible" class="btn btn-primary mt-4" />
+</form>

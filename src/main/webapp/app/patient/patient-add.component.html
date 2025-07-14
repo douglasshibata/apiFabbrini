@@ -1,0 +1,16 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@patient.add.headline">Add Patient</h1>
+    <div>
+        <a routerLink="/patients" class="btn btn-secondary" i18n="@@patient.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="fullname" i18n-label="@@patient.fullname.label" label="Fullname" />
+    <app-input-row [group]="addForm" field="cpf" i18n-label="@@patient.cpf.label" label="Cpf" />
+    <app-input-row [group]="addForm" field="rg" i18n-label="@@patient.rg.label" label="Rg" />
+    <app-input-row [group]="addForm" field="socialname" i18n-label="@@patient.socialname.label" label="Socialname" />
+    <app-input-row [group]="addForm" field="user" rowType="select" [options]="userValues" i18n-label="@@patient.user.label" label="User" />
+    <app-input-row [group]="addForm" field="documents" rowType="multiselect" [options]="documentsValues" i18n-label="@@patient.documents.label" label="Documents" />
+    <app-input-row [group]="addForm" field="healthInsurances" rowType="multiselect" [options]="healthInsurancesValues" i18n-label="@@patient.healthInsurances.label" label="Health Insurances" />
+    <input type="submit" i18n-value="@@patient.add.headline" value="Add Patient" class="btn btn-primary mt-4" />
+</form>

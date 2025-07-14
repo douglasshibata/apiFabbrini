@@ -1,0 +1,39 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@document.list.headline">Documents</h1>
+    <div>
+        <a routerLink="/documents/add" class="btn btn-primary ms-2" i18n="@@document.list.createNew">Create new Document</a>
+    </div>
+</div>
+@if (!documents || documents.length === 0) {
+<div i18n="@@document.list.empty">No Documents could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@document.id.label">Id</th>
+                <th scope="col" i18n="@@document.documentType.label">Document Type</th>
+                <th scope="col" i18n="@@document.filename.label">Filename</th>
+                <th scope="col" i18n="@@document.fileType.label">File Type</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (document of documents; track document.id) {
+            <tr>
+                <td>{{ document.id }}</td>
+                <td>{{ document.documentType }}</td>
+                <td>{{ document.filename }}</td>
+                <td>{{ document.fileType }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/documents/edit', document.id]" class="btn btn-sm btn-secondary" i18n="@@document.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(document.id!)" class="btn btn-sm btn-secondary" i18n="@@document.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

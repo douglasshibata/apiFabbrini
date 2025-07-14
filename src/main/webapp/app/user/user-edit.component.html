@@ -1,0 +1,19 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@user.edit.headline">Edit User</h1>
+    <div>
+        <a routerLink="/users" class="btn btn-secondary" i18n="@@user.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@user.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="email" i18n-label="@@user.email.label" label="Email" />
+    <app-input-row [group]="editForm" field="password" i18n-label="@@user.password.label" label="Password" />
+    <app-input-row [group]="editForm" field="fullname" i18n-label="@@user.fullname.label" label="Fullname" />
+    <app-input-row [group]="editForm" field="active" rowType="checkbox" i18n-label="@@user.active.label" label="Active" />
+    <app-input-row [group]="editForm" field="socialname" i18n-label="@@user.socialname.label" label="Socialname" />
+    <app-input-row [group]="editForm" field="cpf" i18n-label="@@user.cpf.label" label="Cpf" />
+    <app-input-row [group]="editForm" field="crm" i18n-label="@@user.crm.label" label="Crm" />
+    <app-input-row [group]="editForm" field="countAccess" rowType="number" i18n-label="@@user.countAccess.label" label="Count Access" />
+    <app-input-row [group]="editForm" field="role" rowType="select" [options]="roleValues" i18n-label="@@user.role.label" label="Role" />
+    <input type="submit" i18n-value="@@user.edit.headline" value="Edit User" class="btn btn-primary mt-4" />
+</form>

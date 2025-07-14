@@ -1,37 +1,34 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "src/main/webapp/",
+    "outDir": "./target/classes/static/out-tsc",
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "outDir": "./target/classes/static/out-tsc",
-    "removeComments": true,
-    "baseUrl": "src/main/webapp",
-    "esModuleInterop": true,
-    "jsx": "react",
-    "moduleResolution": "bundler",
-    "target": "ES2022",
-    "module": "ES2022",
-    "resolveJsonModule": true,
-    "paths": {},
-    "sourceMap": true,
-    "alwaysStrict": true,
-    "allowUnreachableCode": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": false,
-    "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "typeRoots": ["src/main/webapp/types", "node_modules/@types"]
+    ]
   },
-  "exclude": [
-    "node_modules/**/*",
-    "**/build/**/*",
-    "**/out/**/*"
-  ]
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "preserveWhitespaces": true
+  }
 }

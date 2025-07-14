@@ -73,10 +73,10 @@ public class UserResource {
     }
 
     @GetMapping("/roleValues")
-    public ResponseEntity<Map<Long, String>> getRoleValues() {
+    public ResponseEntity<Map<Long, Long>> getRoleValues() {
         return ResponseEntity.ok(roleRepository.findAll(Sort.by("id"))
                 .stream()
-                .collect(CustomCollectors.toSortedMap(Role::getId, Role::getType)));
+                .collect(CustomCollectors.toSortedMap(Role::getId, Role::getId)));
     }
 
 }

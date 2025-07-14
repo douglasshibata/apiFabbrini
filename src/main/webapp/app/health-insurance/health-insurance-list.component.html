@@ -1,0 +1,43 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@healthInsurance.list.headline">Health Insurances</h1>
+    <div>
+        <a routerLink="/healthInsurances/add" class="btn btn-primary ms-2" i18n="@@healthInsurance.list.createNew">Create new Health Insurance</a>
+    </div>
+</div>
+@if (!healthInsurances || healthInsurances.length === 0) {
+<div i18n="@@healthInsurance.list.empty">No Health Insurances could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@healthInsurance.id.label">Id</th>
+                <th scope="col" i18n="@@healthInsurance.number.label">Number</th>
+                <th scope="col" i18n="@@healthInsurance.type.label">Type</th>
+                <th scope="col" i18n="@@healthInsurance.plan.label">Plan</th>
+                <th scope="col" i18n="@@healthInsurance.carrier.label">Carrier</th>
+                <th scope="col" i18n="@@healthInsurance.active.label">Active</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (healthInsurance of healthInsurances; track healthInsurance.id) {
+            <tr>
+                <td>{{ healthInsurance.id }}</td>
+                <td>{{ healthInsurance.number }}</td>
+                <td>{{ healthInsurance.type }}</td>
+                <td>{{ healthInsurance.plan }}</td>
+                <td>{{ healthInsurance.carrier }}</td>
+                <td>{{ healthInsurance.active }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/healthInsurances/edit', healthInsurance.id]" class="btn btn-sm btn-secondary" i18n="@@healthInsurance.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(healthInsurance.id!)" class="btn btn-sm btn-secondary" i18n="@@healthInsurance.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

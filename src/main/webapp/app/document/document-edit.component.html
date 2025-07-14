@@ -1,0 +1,14 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@document.edit.headline">Edit Document</h1>
+    <div>
+        <a routerLink="/documents" class="btn btn-secondary" i18n="@@document.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@document.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="documentType" rowType="select" [options]="{'CPF': 'CPF', 'RG': 'RG', 'ATESTADO': 'ATESTADO', 'PLANOSAUDE': 'PLANOSAUDE', 'NEWSLETTER': 'NEWSLETTER', 'OTHERS': 'OTHERS'}" i18n-label="@@document.documentType.label" label="Document Type" />
+    <app-input-row [group]="editForm" field="file" rowType="file" [downloadLink]="'/api/phoness/' + currentId + '/file'" i18n-label="@@document.file.label" label="File" />
+    <app-input-row [group]="editForm" field="filename" i18n-label="@@document.filename.label" label="Filename" />
+    <app-input-row [group]="editForm" field="fileType" i18n-label="@@document.fileType.label" label="File Type" />
+    <input type="submit" i18n-value="@@document.edit.headline" value="Edit Document" class="btn btn-primary mt-4" />
+</form>

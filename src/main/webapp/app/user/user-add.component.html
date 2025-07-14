@@ -1,0 +1,18 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@user.add.headline">Add User</h1>
+    <div>
+        <a routerLink="/users" class="btn btn-secondary" i18n="@@user.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="email" i18n-label="@@user.email.label" label="Email" />
+    <app-input-row [group]="addForm" field="password" i18n-label="@@user.password.label" label="Password" />
+    <app-input-row [group]="addForm" field="fullname" i18n-label="@@user.fullname.label" label="Fullname" />
+    <app-input-row [group]="addForm" field="active" rowType="checkbox" i18n-label="@@user.active.label" label="Active" />
+    <app-input-row [group]="addForm" field="socialname" i18n-label="@@user.socialname.label" label="Socialname" />
+    <app-input-row [group]="addForm" field="cpf" i18n-label="@@user.cpf.label" label="Cpf" />
+    <app-input-row [group]="addForm" field="crm" i18n-label="@@user.crm.label" label="Crm" />
+    <app-input-row [group]="addForm" field="countAccess" rowType="number" i18n-label="@@user.countAccess.label" label="Count Access" />
+    <app-input-row [group]="addForm" field="role" rowType="select" [options]="roleValues" i18n-label="@@user.role.label" label="Role" />
+    <input type="submit" i18n-value="@@user.add.headline" value="Add User" class="btn btn-primary mt-4" />
+</form>

@@ -29,7 +29,7 @@ import org.springframework.web.servlet.HandlerMapping;
 )
 public @interface PatientCpfUnique {
 
-    String message() default "{exists.patient.cpf}";
+    String message() default "{Exists.patient.cpf}";
 
     Class<?>[] groups() default {};
 

@@ -1,0 +1,18 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@address.edit.headline">Edit Address</h1>
+    <div>
+        <a routerLink="/addresses" class="btn btn-secondary" i18n="@@address.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@address.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="address" i18n-label="@@address.address.label" label="Address" />
+    <app-input-row [group]="editForm" field="cep" i18n-label="@@address.cep.label" label="Cep" />
+    <app-input-row [group]="editForm" field="complement" i18n-label="@@address.complement.label" label="Complement" />
+    <app-input-row [group]="editForm" field="neighbourhood" i18n-label="@@address.neighbourhood.label" label="Neighbourhood" />
+    <app-input-row [group]="editForm" field="number" rowType="number" i18n-label="@@address.number.label" label="Number" />
+    <app-input-row [group]="editForm" field="city" i18n-label="@@address.city.label" label="City" />
+    <app-input-row [group]="editForm" field="uf" i18n-label="@@address.uf.label" label="Uf" />
+    <app-input-row [group]="editForm" field="user" rowType="select" [options]="userValues" i18n-label="@@address.user.label" label="User" />
+    <input type="submit" i18n-value="@@address.edit.headline" value="Edit Address" class="btn btn-primary mt-4" />
+</form>

@@ -1,0 +1,17 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@doctor.add.headline">Add Doctor</h1>
+    <div>
+        <a routerLink="/doctors" class="btn btn-secondary" i18n="@@doctor.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="conselho" i18n-label="@@doctor.conselho.label" label="Conselho" />
+    <app-input-row [group]="addForm" field="ufconselho" i18n-label="@@doctor.ufconselho.label" label="Ufconselho" />
+    <app-input-row [group]="addForm" field="registro" i18n-label="@@doctor.registro.label" label="Registro" />
+    <app-input-row [group]="addForm" field="title" i18n-label="@@doctor.title.label" label="Title" />
+    <app-input-row [group]="addForm" field="user" rowType="select" [options]="userValues" i18n-label="@@doctor.user.label" label="User" />
+    <app-input-row [group]="addForm" field="specialty" rowType="select" [options]="specialtyValues" i18n-label="@@doctor.specialty.label" label="Specialty" />
+    <app-input-row [group]="addForm" field="healthinsurances" rowType="multiselect" [options]="healthinsurancesValues" i18n-label="@@doctor.healthinsurances.label" label="Healthinsurances" />
+    <app-input-row [group]="addForm" field="documents" rowType="multiselect" [options]="documentsValues" i18n-label="@@doctor.documents.label" label="Documents" />
+    <input type="submit" i18n-value="@@doctor.add.headline" value="Add Doctor" class="btn btn-primary mt-4" />
+</form>

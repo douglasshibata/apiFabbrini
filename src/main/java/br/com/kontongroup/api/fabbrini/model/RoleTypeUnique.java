@@ -29,13 +29,13 @@ import org.springframework.web.servlet.HandlerMapping;
 )
 public @interface RoleTypeUnique {
 
-    String message() default "{exists.role.type}";
+    String message() default "{Exists.role.type}";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
 
-    class RoleTypeUniqueValidator implements ConstraintValidator<RoleTypeUnique, String> {
+    class RoleTypeUniqueValidator implements ConstraintValidator<RoleTypeUnique, RoleType> {
 
         private final RoleService roleService;
         private final HttpServletRequest request;
@@ -47,7 +47,7 @@ public @interface RoleTypeUnique {
         }
 
         @Override
-        public boolean isValid(final String value, final ConstraintValidatorContext cvContext) {
+        public boolean isValid(final RoleType value, final ConstraintValidatorContext cvContext) {
             if (value == null) {
                 // no value present
                 return true;
@@ -55,7 +55,7 @@ public @interface RoleTypeUnique {
             @SuppressWarnings("unchecked") final Map<String, String> pathVariables =
                     ((Map<String, String>)request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE));
             final String currentId = pathVariables.get("id");
-            if (currentId != null && value.equalsIgnoreCase(roleService.get(Long.parseLong(currentId)).getType())) {
+            if (currentId != null && value.equals(roleService.get(Long.parseLong(currentId)).getType())) {
                 // value hasn't changed
                 return true;
             }

@@ -1,0 +1,13 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@phones.edit.headline">Edit Phones</h1>
+    <div>
+        <a routerLink="/phoness" class="btn btn-secondary" i18n="@@phones.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@phones.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="ddd" i18n-label="@@phones.ddd.label" label="Ddd" />
+    <app-input-row [group]="editForm" field="number" i18n-label="@@phones.number.label" label="Number" />
+    <app-input-row [group]="editForm" field="user" rowType="select" [options]="userValues" i18n-label="@@phones.user.label" label="User" />
+    <input type="submit" i18n-value="@@phones.edit.headline" value="Edit Phones" class="btn btn-primary mt-4" />
+</form>

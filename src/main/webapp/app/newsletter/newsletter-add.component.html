@@ -1,0 +1,13 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@newsletter.add.headline">Add Newsletter</h1>
+    <div>
+        <a routerLink="/newsletters" class="btn btn-secondary" i18n="@@newsletter.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="title" i18n-label="@@newsletter.title.label" label="Title" />
+    <app-input-row [group]="addForm" field="content" rowType="textarea" i18n-label="@@newsletter.content.label" label="Content" />
+    <app-input-row [group]="addForm" field="file" rowType="file" i18n-label="@@newsletter.file.label" label="File" />
+    <app-input-row [group]="addForm" field="deliveryDate" rowType="datetimepicker" i18n-label="@@newsletter.deliveryDate.label" label="Delivery Date" />
+    <input type="submit" i18n-value="@@newsletter.add.headline" value="Add Newsletter" class="btn btn-primary mt-4" />
+</form>

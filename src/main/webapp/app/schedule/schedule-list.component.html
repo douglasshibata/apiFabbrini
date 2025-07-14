@@ -1,0 +1,41 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@schedule.list.headline">Schedules</h1>
+    <div>
+        <a routerLink="/schedules/add" class="btn btn-primary ms-2" i18n="@@schedule.list.createNew">Create new Schedule</a>
+    </div>
+</div>
+@if (!schedules || schedules.length === 0) {
+<div i18n="@@schedule.list.empty">No Schedules could be found.</div>
+} @else {
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col" i18n="@@schedule.id.label">Id</th>
+                <th scope="col" i18n="@@schedule.appoimentTime.label">Appoiment Time</th>
+                <th scope="col" i18n="@@schedule.videoHashLink.label">Video Hash Link</th>
+                <th scope="col" i18n="@@schedule.patient.label">Patient</th>
+                <th scope="col" i18n="@@schedule.doctorsAvailableSchedule.label">Doctors Available Schedule</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (schedule of schedules; track schedule.id) {
+            <tr>
+                <td>{{ schedule.id }}</td>
+                <td>{{ schedule.appoimentTime }}</td>
+                <td>{{ schedule.videoHashLink }}</td>
+                <td>{{ schedule.patient }}</td>
+                <td>{{ schedule.doctorsAvailableSchedule }}</td>
+                <td>
+                    <div class="float-end text-nowrap">
+                        <a [routerLink]="['/schedules/edit', schedule.id]" class="btn btn-sm btn-secondary" i18n="@@schedule.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(schedule.id!)" class="btn btn-sm btn-secondary" i18n="@@schedule.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

@@ -1,0 +1,16 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@doctorsAvailableSchedule.edit.headline">Edit Doctors Available Schedule</h1>
+    <div>
+        <a routerLink="/doctorsAvailableSchedules" class="btn btn-secondary" i18n="@@doctorsAvailableSchedule.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@doctorsAvailableSchedule.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="dayOfWeek" i18n-label="@@doctorsAvailableSchedule.dayOfWeek.label" label="Day Of Week" />
+    <app-input-row [group]="editForm" field="startDateTime" rowType="datetimepicker" i18n-label="@@doctorsAvailableSchedule.startDateTime.label" label="Start Date Time" />
+    <app-input-row [group]="editForm" field="endDateTime" rowType="datetimepicker" i18n-label="@@doctorsAvailableSchedule.endDateTime.label" label="End Date Time" />
+    <app-input-row [group]="editForm" field="interval" rowType="datetimepicker" i18n-label="@@doctorsAvailableSchedule.interval.label" label="Interval" />
+    <app-input-row [group]="editForm" field="active" rowType="checkbox" i18n-label="@@doctorsAvailableSchedule.active.label" label="Active" />
+    <app-input-row [group]="editForm" field="doctor" rowType="select" [options]="doctorValues" i18n-label="@@doctorsAvailableSchedule.doctor.label" label="Doctor" />
+    <input type="submit" i18n-value="@@doctorsAvailableSchedule.edit.headline" value="Edit Doctors Available Schedule" class="btn btn-primary mt-4" />
+</form>

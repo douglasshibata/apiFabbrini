@@ -29,7 +29,7 @@ import org.springframework.web.servlet.HandlerMapping;
 )
 public @interface UserCpfUnique {
 
-    String message() default "{exists.user.cpf}";
+    String message() default "{Exists.user.cpf}";
 
     Class<?>[] groups() default {};
 

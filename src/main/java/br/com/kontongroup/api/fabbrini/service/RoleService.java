@@ -3,6 +3,7 @@ package br.com.kontongroup.api.fabbrini.service;
 import br.com.kontongroup.api.fabbrini.domain.Role;
 import br.com.kontongroup.api.fabbrini.domain.User;
 import br.com.kontongroup.api.fabbrini.model.RoleDTO;
+import br.com.kontongroup.api.fabbrini.model.RoleType;
 import br.com.kontongroup.api.fabbrini.repos.RoleRepository;
 import br.com.kontongroup.api.fabbrini.repos.UserRepository;
 import br.com.kontongroup.api.fabbrini.util.NotFoundException;
@@ -64,8 +65,8 @@ public class RoleService {
         return role;
     }
 
-    public boolean typeExists(final String type) {
-        return roleRepository.existsByTypeIgnoreCase(type);
+    public boolean typeExists(final RoleType type) {
+        return roleRepository.existsByType(type);
     }
 
     public ReferencedWarning getReferencedWarning(final Long id) {

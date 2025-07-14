@@ -1,0 +1,15 @@
+<div class="d-flex flex-wrap mb-4">
+    <h1 class="flex-grow-1" i18n="@@schedule.edit.headline">Edit Schedule</h1>
+    <div>
+        <a routerLink="/schedules" class="btn btn-secondary" i18n="@@schedule.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@schedule.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="appoimentTime" rowType="datetimepicker" i18n-label="@@schedule.appoimentTime.label" label="Appoiment Time" />
+    <app-input-row [group]="editForm" field="videoHashLink" i18n-label="@@schedule.videoHashLink.label" label="Video Hash Link" />
+    <app-input-row [group]="editForm" field="note" rowType="textarea" i18n-label="@@schedule.note.label" label="Note" />
+    <app-input-row [group]="editForm" field="patient" rowType="select" [options]="patientValues" i18n-label="@@schedule.patient.label" label="Patient" />
+    <app-input-row [group]="editForm" field="doctorsAvailableSchedule" rowType="select" [options]="doctorsAvailableScheduleValues" i18n-label="@@schedule.doctorsAvailableSchedule.label" label="Doctors Available Schedule" />
+    <input type="submit" i18n-value="@@schedule.edit.headline" value="Edit Schedule" class="btn btn-primary mt-4" />
+</form>

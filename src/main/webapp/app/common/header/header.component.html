@@ -1,0 +1,44 @@
+<header class="bg-light">
+    <div class="container">
+        <nav class="navbar navbar-light navbar-expand-md">
+            <a routerLink="/" class="navbar-brand">
+                <img ngSrc="logo.png" i18n-alt="@@app.title" alt="Fabbrini" width="30" height="30" class="d-inline-block align-top" />
+                <span class="ps-1" i18n="@@app.title">Fabbrini</span>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
+                    i18n-aria-label="@@navigation.toggle" aria-label="Toggle navigation" aria-controls="navbarToggle" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <ul class="navbar-nav ms-auto">
+                    <li class="navbar-item">
+                        <a routerLink="/" class="nav-link" i18n="@@navigation.home">Home</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="navbarEntitiesLink"
+                                aria-expanded="false" i18n="@@navigation.entities">Entities</button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarEntitiesLink">
+                            <li><a routerLink="/phoness" class="dropdown-item" i18n="@@phones.list.headline">Phoneses</a></li>
+                            <li><a routerLink="/users" class="dropdown-item" i18n="@@user.list.headline">Users</a></li>
+                            <li><a routerLink="/addresses" class="dropdown-item" i18n="@@address.list.headline">Addresses</a></li>
+                            <li><a routerLink="/roles" class="dropdown-item" i18n="@@role.list.headline">Roles</a></li>
+                            <li><a routerLink="/doctors" class="dropdown-item" i18n="@@doctor.list.headline">Doctors</a></li>
+                            <li><a routerLink="/specialties" class="dropdown-item" i18n="@@specialty.list.headline">Specialties</a></li>
+                            <li><a routerLink="/healthInsurances" class="dropdown-item" i18n="@@healthInsurance.list.headline">Health Insurances</a></li>
+                            <li><a routerLink="/documents" class="dropdown-item" i18n="@@document.list.headline">Documents</a></li>
+                            <li><a routerLink="/patients" class="dropdown-item" i18n="@@patient.list.headline">Patients</a></li>
+                            <li><a routerLink="/responsibles" class="dropdown-item" i18n="@@responsible.list.headline">Responsibles</a></li>
+                            <li><a routerLink="/passwordTokens" class="dropdown-item" i18n="@@passwordToken.list.headline">Password Tokens</a></li>
+                            <li><a routerLink="/alerts" class="dropdown-item" i18n="@@alert.list.headline">Alerts</a></li>
+                            <li><a routerLink="/newsletters" class="dropdown-item" i18n="@@newsletter.list.headline">Newsletters</a></li>
+                            <li><a routerLink="/emailss" class="dropdown-item" i18n="@@emails.list.headline">Emailses</a></li>
+                            <li><a routerLink="/schedules" class="dropdown-item" i18n="@@schedule.list.headline">Schedules</a></li>
+                            <li><a routerLink="/medicalRecords" class="dropdown-item" i18n="@@medicalRecord.list.headline">Medical Records</a></li>
+                            <li><a routerLink="/doctorsAvailableSchedules" class="dropdown-item" i18n="@@doctorsAvailableSchedule.list.headline">Doctors Available Schedules</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
