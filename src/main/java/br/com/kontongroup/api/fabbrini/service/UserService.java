@@ -1,11 +1,22 @@
 package br.com.kontongroup.api.fabbrini.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
+
 import br.com.kontongroup.api.fabbrini.domain.Address;
 import br.com.kontongroup.api.fabbrini.domain.Doctor;
 import br.com.kontongroup.api.fabbrini.domain.Patient;
 import br.com.kontongroup.api.fabbrini.domain.Phones;
 import br.com.kontongroup.api.fabbrini.domain.Role;
 import br.com.kontongroup.api.fabbrini.domain.User;
+import br.com.kontongroup.api.fabbrini.model.LoginUserDTO;
+import br.com.kontongroup.api.fabbrini.model.RecoveryJwtTokenDto;
 import br.com.kontongroup.api.fabbrini.model.UserDTO;
 import br.com.kontongroup.api.fabbrini.repos.AddressRepository;
 import br.com.kontongroup.api.fabbrini.repos.DoctorRepository;
@@ -13,15 +24,23 @@ import br.com.kontongroup.api.fabbrini.repos.PatientRepository;
 import br.com.kontongroup.api.fabbrini.repos.PhonesRepository;
 import br.com.kontongroup.api.fabbrini.repos.RoleRepository;
 import br.com.kontongroup.api.fabbrini.repos.UserRepository;
+import br.com.kontongroup.api.fabbrini.security.authentication.JwtTokenService;
+import br.com.kontongroup.api.fabbrini.security.config.SecurityConfiguration;
+import br.com.kontongroup.api.fabbrini.security.userdetails.UserDetailsImpl;
 import br.com.kontongroup.api.fabbrini.util.NotFoundException;
 import br.com.kontongroup.api.fabbrini.util.ReferencedWarning;
-import java.util.List;
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
-
 
 @Service
 public class UserService {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JwtTokenService jwtTokenService;
+
+    @Autowired
+    private SecurityConfiguration securityConfiguration;
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -87,15 +106,16 @@ public class UserService {
 
     private User mapToEntity(final UserDTO userDTO, final User user) {
         user.setEmail(userDTO.getEmail());
-        user.setPassword(userDTO.getPassword());
+        user.setPassword(securityConfiguration.passwordEncoder().encode(userDTO.getPassword()));
         user.setFullname(userDTO.getFullname());
         user.setActive(userDTO.getActive());
         user.setSocialname(userDTO.getSocialname());
         user.setCpf(userDTO.getCpf());
         user.setCrm(userDTO.getCrm());
         user.setCountAccess(userDTO.getCountAccess());
-        final Role role = userDTO.getRole() == null ? null : roleRepository.findById(userDTO.getRole())
-                .orElseThrow(() -> new NotFoundException("role not found"));
+        final Role role = userDTO.getRole() == null ? null
+                : roleRepository.findById(userDTO.getRole())
+                        .orElseThrow(() -> new NotFoundException("role not found"));
         user.setRole(role);
         return user;
     }
@@ -143,4 +163,14 @@ public class UserService {
         return null;
     }
 
+    public RecoveryJwtTokenDto authenticateUser(LoginUserDTO loginUserDto) {
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+                loginUserDto.email(), loginUserDto.password());
+
+        Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+
+        return new RecoveryJwtTokenDto(jwtTokenService.generateToken(userDetails));
+    }
 }
