@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class EmailsService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/v1/v1/v1/emailss';
+  resourcePath = environment.apiPath + '/api/v1/v1/emailss';
 
   getAllEmailses() {
     return this.http.get<EmailsDTO[]>(this.resourcePath);

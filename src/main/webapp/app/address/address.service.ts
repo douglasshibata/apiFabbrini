@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class AddressService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/v1/v1/v1/addresses';
+  resourcePath = environment.apiPath + '/api/v1/v1/addresses';
 
   getAllAddresses() {
     return this.http.get<AddressDTO[]>(this.resourcePath);

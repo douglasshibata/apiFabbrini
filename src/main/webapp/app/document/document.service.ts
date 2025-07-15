@@ -10,7 +10,7 @@ import { DocumentDTO } from 'app/document/document.model';
 export class DocumentService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/v1/v1/v1/documents';
+  resourcePath = environment.apiPath + '/api/v1/v1/documents';
 
   getAllDocuments() {
     return this.http.get<DocumentDTO[]>(this.resourcePath);
