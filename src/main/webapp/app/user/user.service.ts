@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class UserService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/users';
+  resourcePath = environment.apiPath + '/api/v1/users';
 
   getAllUsers() {
     return this.http.get<UserDTO[]>(this.resourcePath);

@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/responsibles", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/v1/responsibles", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ResponsibleResource {
 
     private final ResponsibleService responsibleService;

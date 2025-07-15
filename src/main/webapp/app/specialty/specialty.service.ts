@@ -10,7 +10,7 @@ import { SpecialtyDTO } from 'app/specialty/specialty.model';
 export class SpecialtyService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/specialties';
+  resourcePath = environment.apiPath + '/api/v1/specialties';
 
   getAllSpecialties() {
     return this.http.get<SpecialtyDTO[]>(this.resourcePath);

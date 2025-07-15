@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class ResponsibleService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/responsibles';
+  resourcePath = environment.apiPath + '/api/v1/responsibles';
 
   getAllResponsibles() {
     return this.http.get<ResponsibleDTO[]>(this.resourcePath);

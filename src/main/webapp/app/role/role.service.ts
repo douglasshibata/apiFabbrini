@@ -10,7 +10,7 @@ import { RoleDTO } from 'app/role/role.model';
 export class RoleService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/roles';
+  resourcePath = environment.apiPath + '/api/v1/roles';
 
   getAllRoles() {
     return this.http.get<RoleDTO[]>(this.resourcePath);

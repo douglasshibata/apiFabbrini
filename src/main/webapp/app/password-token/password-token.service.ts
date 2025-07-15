@@ -10,7 +10,7 @@ import { PasswordTokenDTO } from 'app/password-token/password-token.model';
 export class PasswordTokenService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/passwordTokens';
+  resourcePath = environment.apiPath + '/api/v1/v1/passwordTokens';
 
   getAllPasswordTokens() {
     return this.http.get<PasswordTokenDTO[]>(this.resourcePath);

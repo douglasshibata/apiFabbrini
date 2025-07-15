@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class DoctorsAvailableScheduleService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/doctorsAvailableSchedules';
+  resourcePath = environment.apiPath + '/api/v1/v1/doctorsAvailableSchedules';
 
   getAllDoctorsAvailableSchedules() {
     return this.http.get<DoctorsAvailableScheduleDTO[]>(this.resourcePath);

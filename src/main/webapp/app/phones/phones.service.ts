@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class PhonesService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/phoness';
+  resourcePath = environment.apiPath + '/api/v1/v1/phoness';
 
   getAllPhoneses() {
     return this.http.get<PhonesDTO[]>(this.resourcePath);

@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class PatientService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/patients';
+  resourcePath = environment.apiPath + '/api/v1/v1/patients';
 
   getAllPatients() {
     return this.http.get<PatientDTO[]>(this.resourcePath);

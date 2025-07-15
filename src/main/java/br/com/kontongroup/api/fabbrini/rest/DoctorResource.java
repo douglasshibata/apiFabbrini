@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/doctors", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/doctors", produces = MediaType.APPLICATION_JSON_VALUE)
 public class DoctorResource {
 
     private final DoctorService doctorService;

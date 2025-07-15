@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/medicalRecords", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/v1/medicalRecords", produces = MediaType.APPLICATION_JSON_VALUE)
 public class MedicalRecordResource {
 
     private final MedicalRecordService medicalRecordService;

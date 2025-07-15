@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class HealthInsuranceService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/healthInsurances';
+  resourcePath = environment.apiPath + '/api/v1/v1/v1/healthInsurances';
 
   getAllHealthInsurances() {
     return this.http.get<HealthInsuranceDTO[]>(this.resourcePath);

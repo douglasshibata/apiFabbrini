@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/emailss", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/v1/emailss", produces = MediaType.APPLICATION_JSON_VALUE)
 public class EmailsResource {
 
     private final EmailsService emailsService;

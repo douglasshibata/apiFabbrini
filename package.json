@@ -1,6 +1,6 @@
 {
   "name": "fabbrini-frontend",
-  "author": "Bootify.io",
+  "author": "douglasshibata",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

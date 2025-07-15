@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/schedules", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/v1/schedules", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ScheduleResource {
 
     private final ScheduleService scheduleService;

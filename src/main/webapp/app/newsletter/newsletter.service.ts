@@ -10,7 +10,7 @@ import { NewsletterDTO } from 'app/newsletter/newsletter.model';
 export class NewsletterService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/newsletters';
+  resourcePath = environment.apiPath + '/api/v1/v1/newsletters';
 
   getAllNewsletters() {
     return this.http.get<NewsletterDTO[]>(this.resourcePath);

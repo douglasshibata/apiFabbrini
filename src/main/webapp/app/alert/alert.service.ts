@@ -10,7 +10,7 @@ import { AlertDTO } from 'app/alert/alert.model';
 export class AlertService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/alerts';
+  resourcePath = environment.apiPath + '/api/v1/v1/alerts';
 
   getAllAlerts() {
     return this.http.get<AlertDTO[]>(this.resourcePath);

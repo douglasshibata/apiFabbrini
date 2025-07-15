@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/alerts", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/alerts", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AlertResource {
 
     private final AlertService alertService;

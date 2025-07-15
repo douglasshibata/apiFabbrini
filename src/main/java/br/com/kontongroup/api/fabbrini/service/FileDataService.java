@@ -133,7 +133,7 @@ public class FileDataService {
                 .body(inputStreamResource);
     }
 
-    @Scheduled(cron = "0 0 0-23/2 * * *")
+    @Scheduled(cron = "0 0 0-23 * * *")
     public void cleanUploadDir() {
         log.info("cleaning upload dir");
         final File uploadDir = new File(UPLOAD_DIRECTORY);

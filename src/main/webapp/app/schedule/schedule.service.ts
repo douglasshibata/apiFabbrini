@@ -12,7 +12,7 @@ import { transformRecordToMap } from 'app/common/utils';
 export class ScheduleService {
 
   http = inject(HttpClient);
-  resourcePath = environment.apiPath + '/api/schedules';
+  resourcePath = environment.apiPath + '/api/v1/schedules';
 
   getAllSchedules() {
     return this.http.get<ScheduleDTO[]>(this.resourcePath);
